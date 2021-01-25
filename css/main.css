@@ -1,0 +1,63 @@
+body{
+    background-color: darkgrey;
+}
+.header {
+    background-color: black;
+    text-align: center;
+    box-sizing: border-box;
+    color: white;
+    font-size: 48px;
+    letter-spacing: 25px;
+}
+
+#titleHead{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #612020;
+    color: #a48fef;
+}
+.battlefield {
+    background-color: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fighterModel {
+    display: flex;
+    background-color: #fff082;
+    height:480px;
+    width: 270px;
+}
+
+.centerDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: chocolate;
+    height: 125px;
+    width: 125px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px; 
+    width: 75px;
+}
+
+.monsterModel {
+    display: flex;
+    background-color: darkgoldenrod;
+    height: 480px;
+    width: 270px;
+}
+footer{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    text-align: right;
+
+}

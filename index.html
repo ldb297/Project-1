@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[2B||!2B]</title>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
+    <link rel="icon" 
+      type="image/png" 
+      href="images/flame-clipart-horizontal-4-transparent.png">
+</head>
+
+
+<body>
+    <div class="header">
+        
+        <!--Here we will set three different versions of the main heading
+            utilizing js toggling between set styling in CSS-->
+        
+        <div id="chooseHead"></div>
+        <div id="battleHead"></div>
+        <div id="titleHead">[2B||!2B]</div>
+    </div>
+
+    <div class="battlefield">
+        <div class="fighterModel">
+        
+<!--Here we will set two different "fighter" classes to 
+    toggle between as display of user character choice-->
+        
+            <div id="fighterOne"></div>
+            <div id="fighterTwo"></div>
+        </div>
+
+        <div class="centerDisplay">
+        
+<!--Here we will create center display responses. 
+    1st screen top button for left and bottom button for right
+        2nd screen top button for atk and bottom button for def
+            3rd screen replaces both buttons with an image reflecting choice
+                Repeat between second and third screen until battle sequence over
+                    Possibly include scrolling/fading image to reflect HP loss-->
+            
+            <button id="topButton"></button><br/>
+            <button id="bottomButton"></button>
+            <div id="attackImage"></div>
+            <div id="defendImage"></div>
+        </div>
+
+        <div class="monsterModel">
+            <div id="monsterBox"></div>
+        </div>
+    </div>
+
+
+</body>
+
+<footer>
+3-9scripts 2021
+</footer>
+
+</html>
