@@ -8,7 +8,7 @@ let userAtk = 5
 let userDef = 3
 
 let monsterHp = 50
-let monsterOneAtk = 5
+let monsterOneAtk = 25
 
 let userAtkImg = document.getElementById('userAtk')
 let userDefImg = document.getElementById('userDef')
@@ -16,8 +16,37 @@ let monsterAtkImg = document.getElementById('monsterAtk')
 let atkButton = document.querySelectorAll('button')[0]
 let defButton = document.querySelectorAll('button')[1]
 
-// document.body.style.backgroundColor = "red"
-
+setInterval(heartbeat1 = () =>{
+    if(userHp > 75){
+        setTimeout(rate = () =>{
+            document.body.style.backgroundColor = "red";
+        }, 250)
+        setTimeout(rest = () =>{
+            document.body.style.backgroundColor = "darkgrey";
+        }, 550)
+    } else if (userHp <= 75 && userHp > 50){
+        setTimeout(rate = () =>{
+            document.body.style.backgroundColor = "red";
+        }, 250)
+        setTimeout(rest = () =>{
+            document.body.style.backgroundColor = "darkgrey";
+        }, 550)
+    } else if (userHp <= 50 && userHp > 25){
+        setTimeout(rate = () =>{
+            document.body.style.backgroundColor = "red";
+        }, 250)
+        setTimeout(rest = () =>{
+            document.body.style.backgroundColor = "darkgrey";
+        }, 550)
+    } else if (userHp <= 25){
+        setTimeout(rate = () =>{
+            document.body.style.backgroundColor = "red";
+        }, 250)
+        setTimeout(rest = () =>{
+            document.body.style.backgroundColor = "darkgrey";
+        }, 550)
+    }
+}, 2500);
 
 showButtons = () =>{
     atkButton.style.display = "flex";
@@ -45,18 +74,20 @@ showUserDef = () =>{
 hideUserDef = () =>{
     userDefImg.style.display = "none";
 }
-
+reload = () =>{
+    location.reload()
+}
 userDeath = () =>{
     window.alert("You dead son")
+    setTimeout(reload, 250)
 }
-
 monsterDeath = () =>{
     window.alert("He dead son")
 }
 
 atkButton.addEventListener('click', attack = () =>{
-    setTimeout(hideButtons, 350)
-    setTimeout(showUserAtk, 360)
+    setTimeout(hideButtons, 50)
+    setTimeout(showUserAtk, 160)
     setTimeout(hideUserAtk, 1615)
     monsterHp = monsterHp - userAtk
     setTimeout(showMonsterAtk,1615)
@@ -74,8 +105,8 @@ atkButton.addEventListener('click', attack = () =>{
 })
 
 defButton.addEventListener('click', defend = () =>{
-    setTimeout(hideButtons, 350)
-    setTimeout(showMonsterAtk, 360)
+    setTimeout(hideButtons, 50)
+    setTimeout(showMonsterAtk, 160)
     setTimeout(hideMonsterAtk, 1615)
     let finalLoss = monsterOneAtk - userDef
     userHp = userHp - finalLoss
@@ -137,3 +168,77 @@ defButton.addEventListener('click', defend = () =>{
 // full grey, switch to red for 80ms
 // heartbeat function that determines how long it stays red with timeout function. 
 // if else or switch stament within function to change timeout parameters 
+
+// healthDisplay = () =>{
+//     if (userHp > 75){
+//     setInterval(heartbeat1 = () => {
+//         setTimeout(rate = () =>{
+//             document.body.style.backgroundColor = "red";
+//         }, 250)
+//         setTimeout(rest = () =>{
+//             document.body.style.backgroundColor = "darkgrey";
+//         }, 550)
+//     }, 2500);
+//     } else if (userHp <=75 && userHp > 50){
+//     setInterval(heartbeat2 = () =>{
+//         setTimeout(rate = () =>{
+//             document.body.style.backgroundColor = "red";
+//         }, 250)
+//         setTimeout(rest = () =>{
+//             document.body.style.backgroundColor = "darkgrey";
+//         }, 550)
+//     }, 1500);
+//     } else if (userHp <= 50 && userHp > 25){
+//     setInterval(heartbeat3 = () => {
+//         setTimeout(rate = () =>{
+//             document.body.style.backgroundColor = "red";
+//         }, 250)
+//         setTimeout(rest = () =>{
+//             document.body.style.backgroundColor = "darkgrey";
+//         }, 550)
+//     }, 1000);
+//     } else if (userHp <= 25){
+//     setInterval(heartbeat4 = () => {
+//         setTimeout(rate = () =>{
+//             document.body.style.backgroundColor = "red";
+//         }, 250)
+//         setTimeout(rest = () =>{
+//             document.body.style.backgroundColor = "darkgrey";
+//         }, 550)
+//     }, 250);
+//     }
+// }
+// healthDisplay()
+
+// setInterval(heartbeat2 = () =>{
+//     if(userHp <=75 && userHp > 50){
+//         setTimeout(rate = () =>{
+//             document.body.style.backgroundColor = "red";
+//         }, 250)
+//         setTimeout(rest = () =>{
+//             document.body.style.backgroundColor = "darkgrey";
+//         }, 550)
+//     }
+// }, 1500);
+
+// setInterval(heartbeat3 = () =>{
+//     if(userHp >= 50 && userHp > 25 ){
+//         setTimeout(rate = () =>{
+//             document.body.style.backgroundColor = "red";
+//         }, 250)
+//         setTimeout(rest = () =>{
+//             document.body.style.backgroundColor = "darkgrey";
+//         }, 550)
+//     }
+// }, 1000);
+
+// setInterval(heartbeat4 = () =>{
+//     if(userHp <= 25 ){
+//         setTimeout(rate = () =>{
+//             document.body.style.backgroundColor = "red";
+//         }, 250)
+//         setTimeout(rest = () =>{
+//             document.body.style.backgroundColor = "darkgrey";
+//         }, 550)
+//     }
+// }, 250);
