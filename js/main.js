@@ -13,7 +13,7 @@ let userAtk = 5
 let userDef = 3
 
 let monsterHp = 50
-let monsterOneAtk = 25
+let monsterOneAtk = 10
 
 let userAtkImg = document.getElementById('userAtk')
 let userDefImg = document.getElementById('userDef')
@@ -107,13 +107,13 @@ atkButton.addEventListener('click', attack = () =>{
     setTimeout(hideButtons, 50)
     setTimeout(showUserAtk, 160)
     setTimeout(hideUserAtk, 1615)
-    monsterHp = monsterHp - userAtk
+    monsterHp = monsterHp - (Math.floor(Math.random() * 6) + userAtk)
     setTimeout(showMonsterAtk,1615)
     setTimeout(hideMonsterAtk, 2890)
-    userHp = userHp - monsterOneAtk
+    userHp = userHp - (Math.floor(Math.random() * 6) + monsterOneAtk)
     healthDisplay()
-    console.log(userHp)
-    console.log(monsterHp)
+    console.log(`userHp = ${userHp}`)
+    console.log(`monsterHp = ${monsterHp}`)
     setTimeout(showButtons, 3000)
     if (userHp <= 0){
         setTimeout(userDeath, 2000)
@@ -127,13 +127,13 @@ defButton.addEventListener('click', defend = () =>{
     setTimeout(hideButtons, 50)
     setTimeout(showMonsterAtk, 160)
     setTimeout(hideMonsterAtk, 1615)
-    let finalLoss = monsterOneAtk - userDef
-    userHp = userHp - finalLoss
+    userHp = userHp - ((Math.floor(Math.random() * 6) + monsterOneAtk) - (Math.floor(Math.random() * 6) + userDef))
+    monsterHp = monsterHp - (Math.floor(Math.random() * 3))
     healthDisplay()
     setTimeout(showUserDef, 1615)
     setTimeout(hideUserDef, 2890)
-    console.log(userHp)
-    console.log(monsterHp)
+    console.log(`userHp = ${userHp}`)
+    console.log(`monsterHp = ${monsterHp}`)
     setTimeout(showButtons, 3000)
     if (userHp <= 0){
         setTimeout(userDeath, 2000)

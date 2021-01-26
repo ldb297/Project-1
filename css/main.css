@@ -8,15 +8,26 @@ body {
     box-sizing: border-box;
     color: white;
     font-size: 48px;
+    font-family: 'Nanum Pen Script', cursive;
     letter-spacing: 25px;
+}
+
+#chooseHead {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#battleHead {
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
 #titleHead{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #612020;
-    color: #a48fef;
 }
 
 .battlefield {
