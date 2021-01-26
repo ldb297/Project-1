@@ -31,7 +31,3 @@ VI. User can retry
 
 ![wireframe](./images/wireframe.jpg)
 ![wireframe2](./images/wireframe2.jpg)
-
-git remote add origin https://github.com/ldb297/Project-1.git
-git branch -M main
-git push -u origin main

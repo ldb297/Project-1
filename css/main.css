@@ -1,6 +1,7 @@
-body{
+body {
     background-color: darkgrey;
 }
+
 .header {
     background-color: black;
     text-align: center;
@@ -17,6 +18,7 @@ body{
     background-color: #612020;
     color: #a48fef;
 }
+
 .battlefield {
     background-color: cadetblue;
     display: flex;
@@ -29,6 +31,13 @@ body{
     background-color: #fff082;
     height:480px;
     width: 270px;
+}
+
+#fighterOn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 270px;
 }
 
 .centerDisplay {
