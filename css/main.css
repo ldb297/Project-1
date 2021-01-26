@@ -22,7 +22,7 @@ body {
 .battlefield {
     background-color: cadetblue;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -33,7 +33,7 @@ body {
     width: 270px;
 }
 
-#fighterOn {
+#fighterOne {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,20 +42,55 @@ body {
 
 .centerDisplay {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: chocolate;
-    height: 125px;
-    width: 125px;
+    height: 175px;
+    width: 175px;
 }
 
 button {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    position: relative;
     height: 25px; 
     width: 75px;
 }
+
+#topButton{
+    display: flex;
+    position: fixed;
+    top: auto;
+    margin-right: 100px;
+}
+
+#bottomButton{
+    display: flex;
+    position: fixed;
+    top: auto;
+    margin-left: 100px;
+}
+
+#userAtk{
+    display: none;
+    position: relative;
+    align-items: center;
+}
+
+#monsterAtk{
+    display: none;
+    position: relative;
+    align-items: center;
+}
+
+#userDef{
+    display: none;
+    position: relative;
+    align-items: center;
+}
+
+
 
 .monsterModel {
     display: flex;
@@ -63,6 +98,7 @@ button {
     height: 480px;
     width: 270px;
 }
+
 footer{
     display: flex;
     justify-content: flex-end;
