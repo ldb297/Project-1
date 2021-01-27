@@ -48,6 +48,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -25px;
     max-width: 270px;
 }
 
@@ -61,7 +62,6 @@ body {
 }
 
 button {
-    display: flex;
     justify-content: space-evenly;
     align-items: center;
     position: relative;
@@ -78,6 +78,20 @@ button {
 
 #bottomButton{
     display: flex;
+    position: fixed;
+    top: auto;
+    margin-left: 100px;
+}
+
+#chooseAtk{
+    display: none;
+    position: fixed;
+    top: auto;
+    margin-right: 100px;    
+}
+
+#chooseHp{
+    display: none;
     position: fixed;
     top: auto;
     margin-left: 100px;
@@ -107,6 +121,41 @@ button {
     background-color: darkgoldenrod;
     height: 480px;
     width: 270px;
+}
+
+#monsterOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 480px;
+    max-width: 270px;
+}
+
+#monsterTwo {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 480px;
+    max-width: 270px;
+}
+
+#monsterThree {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 480px;
+    max-width: 270px;
+}
+
+.lowerHeader {
+    background-color: black;
+    text-align: center;
+    box-sizing: border-box;
+    color: white;
+    font-size: 48px;
+    font-family: 'Nanum Pen Script', cursive;
+    letter-spacing: 25px;
+    margin-top: 25px;
 }
 
 footer{
