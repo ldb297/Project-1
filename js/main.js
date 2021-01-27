@@ -14,29 +14,24 @@ let userHp = 100
 let userAtk = 5
 let userDef = 3
 
-let monsterOneHp = 50
-let monsterOneAtk = 5
-let monsterTwoHp = 75
-let monsterTwoAtk = 10
-let monsterThreeHp = 100
-let monsterThreeAtk = 25
+let monsterHp = 50
+let monsterOneAtk = 10
 
 let userAtkImg = document.getElementById('userAtk')
 let userDefImg = document.getElementById('userDef')
 let monsterAtkImg = document.getElementById('monsterAtk')
 let atkButton = document.querySelectorAll('button')[0]
 let defButton = document.querySelectorAll('button')[1]
-let buffAtk = document.getElementById('chooseAtk')
-let buffHp = document.getElementById('chooseHp')
-let monsterOne = document.getElementById('monsterOne')
-let monsterTwo = document.getElementById('monsterTwo')
-let monsterThree = document.getElementById('monsterThree')
 
 healthDisplay = () =>{
+    clearInterval(heartbeat1)
+    clearInterval(heartbeat2)
+    clearInterval(heartbeat3)
+    clearInterval(heartbeat4)
     if (userHp > 75){
     heartbeat1 = setInterval(heartbeat1 = () => {
         setTimeout(rate = () =>{
-            document.body.style.backgroundColor = "#8c4d49";
+            document.body.style.backgroundColor = "red";
         }, 250)
         setTimeout(rest = () =>{
             document.body.style.backgroundColor = "darkgrey";
@@ -45,7 +40,7 @@ healthDisplay = () =>{
     } else if (userHp <=75 && userHp > 50){
     heartbeat2 = setInterval(heartbeat2 = () =>{
         setTimeout(rate = () =>{
-            document.body.style.backgroundColor = "#91423d";
+            document.body.style.backgroundColor = "red";
         }, 250)
         setTimeout(rest = () =>{
             document.body.style.backgroundColor = "darkgrey";
@@ -54,7 +49,7 @@ healthDisplay = () =>{
     } else if (userHp <= 50 && userHp > 25){
     heartbeat3 = setInterval(heartbeat3 = () => {
         setTimeout(rate = () =>{
-            document.body.style.backgroundColor = "#7a2a25";
+            document.body.style.backgroundColor = "red";
         }, 250)
         setTimeout(rest = () =>{
             document.body.style.backgroundColor = "darkgrey";
@@ -63,53 +58,23 @@ healthDisplay = () =>{
     } else if (userHp <= 25){
     heartbeat4 = setInterval(heartbeat4 = () => {
         setTimeout(rate = () =>{
-            document.body.style.backgroundColor = "#80140d";
+            document.body.style.backgroundColor = "red";
         }, 250)
         setTimeout(rest = () =>{
             document.body.style.backgroundColor = "darkgrey";
         }, 550)
-    }, 550);
+    }, 250);
     }   
-    clearInterval(heartbeat1)
-    clearInterval(heartbeat2)
-    clearInterval(heartbeat3)
-    clearInterval(heartbeat4)
 }
 healthDisplay()
 
-hideMonsterOne = () =>{
-    monsterOne.style.display = "none";
-}
-showMonsterOne = () =>{
-    monsterOne.style.display = "flex";
-}
-hideMonsterTwo = () =>{
-    monsterTwo.style.display = "none";
-}
-showMonsterTwo = () =>{
-    monsterTwo.style.display = "flex";
-}
-hideMonsterThree = () =>{
-    monsterThree.style.display = "none";
-}
-showMonsterThree = () =>{
-    monsterThree.style.display = "none";
-}
-showFightButtons = () =>{
+showButtons = () =>{
     atkButton.style.display = "flex";
     defButton.style.display = "flex";
 }
-hideFightButtons = () =>{
+hideButtons = () =>{
     atkButton.style.display = "none";
     defButton.style.display = "none";
-}
-showBuffButtons = () =>{
-    buffAtk.style.display = "flex";
-    buffHp.style.display = "flex";
-}
-hideBuffButtons = () =>{
-    buffAtk.style.display = "none";
-    buffHp.style.display = "none";
 }
 showUserAtk = () =>{
     userAtkImg.style.display = "flex";
@@ -138,72 +103,45 @@ userDeath = () =>{
 }
 monsterDeath = () =>{
     window.alert("He dead son")
-    setTimeout(pickingBuffs, 250)
-}
-pickingBuffs = () =>{
-    setTimeout(hideFightButtons(), 50)
-    setTimeout(showBuffButtons(), 100)
-    setTimeout(hideBuffButtons(), 1050)
-    setTimeout(showFightButtons(), 1050)
-    setTimeout(nextMonster(), 1250)
-}
-
-nextMonster = () =>{ 
-    if (monsterOne === monsterOne){
-    hideMonsterOne()
-    showMonsterTwo()
-    monsterOne = monsterTwo
-    monsterOneAtk = monsterTwoAtk
-    monsterOneHp = monsterTwoHp
-    } else if (monsterTwo === monsterTwo ){
-        hideMonsterTwo()
-        showMonsterThree()
-        monsterTwo = monsterThree
-        monsterTwoAtk = monsterThreeAtk
-        monsterTwoHp = monsterThreeHp
-    } else {
-        window.alert("wait, you killed jeff what the heff dude chill")
-    }
 }
 
 atkButton.addEventListener('click', attack = () =>{
+    setTimeout(hideButtons, 50)
+    setTimeout(showUserAtk, 160)
+    setTimeout(hideUserAtk, 1615)
+    monsterHp = monsterHp - (Math.floor(Math.random() * 6) + userAtk)
+    setTimeout(showMonsterAtk,1615)
+    setTimeout(hideMonsterAtk, 2890)
+    userHp = userHp - (Math.floor(Math.random() * 6) + monsterOneAtk)
     healthDisplay()
-    setTimeout(hideFightButtons, 50)
-    setTimeout(showUserAtk, 150)
-    setTimeout(hideUserAtk, 650)
-    monsterOneHp = monsterOneHp - (Math.floor(Math.random() * 5) + userAtk)
-    setTimeout(showMonsterAtk,660)
-    setTimeout(hideMonsterAtk, 1160)
-    userHp = userHp - (Math.floor(Math.random() * 3) + monsterOneAtk)
     console.log(`userHp = ${userHp}`)
-    console.log(`monsterOneHp = ${monsterOneHp}`)
-    setTimeout(showFightButtons, 1500)
+    console.log(`monsterHp = ${monsterHp}`)
+    setTimeout(showButtons, 3000)
     if (userHp <= 0){
         setTimeout(userDeath, 2000)
-    } else if (monsterOneHp <= 0){
-        hideFightButtons()
-        hideMonsterAtk()
-        hideUserAtk()
+    } else if (monsterHp <= 0){
         monsterDeath()
+        setTimeout(nextMonster, 1500)
     }
 })
 
 defButton.addEventListener('click', defend = () =>{
-    healthDisplay()
-    setTimeout(hideFightButtons, 50)
-    setTimeout(showMonsterAtk, 150)
-    setTimeout(hideMonsterAtk, 650)
+    setTimeout(hideButtons, 50)
+    setTimeout(showMonsterAtk, 160)
+    setTimeout(hideMonsterAtk, 1615)
     userHp = userHp - ((Math.floor(Math.random() * 6) + monsterOneAtk) - (Math.floor(Math.random() * 6) + userDef))
-    monsterOneHp = monsterOneHp - (Math.floor(Math.random() * 3))
-    setTimeout(showUserDef, 660)
-    setTimeout(hideUserDef, 1160)
+    monsterHp = monsterHp - (Math.floor(Math.random() * 3))
+    healthDisplay()
+    setTimeout(showUserDef, 1615)
+    setTimeout(hideUserDef, 2890)
     console.log(`userHp = ${userHp}`)
-    console.log(`monsterOneHp = ${monsterOneHp}`)
-    setTimeout(showFightButtons, 1500)
+    console.log(`monsterHp = ${monsterHp}`)
+    setTimeout(showButtons, 3000)
     if (userHp <= 0){
         setTimeout(userDeath, 2000)
     }
 })
+
 
 
 
