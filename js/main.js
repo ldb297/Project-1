@@ -3,7 +3,7 @@
 // Create functions
 // Attach eventListeners
 
-window.alert("WARNING: This video may potentially trigger seizures for people with photosensitive epilepsy. Viewer discretion is advised.A very small percentage of people may experience a seizure when exposed to certain visual images, including flashing lights or visual patterns. Even people who have no history of seizures or epilepsy may have an undiagnosed condition that can cause these 'photosensitive epileptic seizures' while watching video games. These seizures may have a variety of symptoms, including lightheadedness, altered vision, eye or face twitching, jerking or shaking of arms or legs, disorientation, confusion, or momentary loss of awareness. Seizures may also cause loss of consciousness or convulsions that can lead to injury from falling down or striking nearby objects. Immediately stop viewing and consult a doctor if you experience any of these symptoms. Parents should watch for or ask their children about the above symptoms. Children and teenagers are more likely than adults to experience these seizures. The risk of photosensitive epileptic seizures may be reduced by taking the following precautions: View in a well-lit room. Do not view if you are drowsy or fatigued. View with some distance from the image so that it fills less of one's field of vision. If you or any of your relatives have a history of seizures or epilepsy, it is recommended that you consult a doctor before viewing.")
+window.alert("WARNING: This game may potentially trigger seizures for people with photosensitive epilepsy. ***Viewer discretion is advised*** A very small percentage of people may experience a seizure when exposed to certain visual images, including flashing lights or visual patterns. Even people who have no history of seizures or epilepsy may have an undiagnosed condition that can cause these 'photosensitive epileptic seizures' while watching/playing certain video games. These seizures may have a variety of symptoms, including lightheadedness, altered vision, eye or face twitching, jerking or shaking of arms or legs, disorientation, confusion, or momentary loss of awareness. Seizures may also cause loss of consciousness or convulsions that can lead to injury from falling down or striking nearby objects. Immediately stop viewing and consult a doctor if you experience any of these symptoms. Parents should watch for or ask their children about the above symptoms. Children and teenagers are more likely than adults to experience these seizures. The risk of photosensitive epileptic seizures may be reduced by taking the following precautions: View in a well-lit room. Do not view if you are drowsy or fatigued. View with some distance from the image so that it fills less of one's field of vision. If you or any of your relatives have a history of seizures or epilepsy, it is recommended that you consult a doctor before viewing.")
 
 let heartbeat1;
 let heartbeat2;
@@ -137,12 +137,15 @@ userDeath = () =>{
     setTimeout(reload, 250)
 }
 monsterDeath = () =>{
-    hideFightButtons()
-    setTimeout(showBuffButtons(), 50)
-    setTimeout(hideBuffButtons(), 1000)
-    setTimeout(showFightButtons(), 1000)
+    window.alert("He dead son")
+    setTimeout(pickingBuffs, 250)
+}
+pickingBuffs = () =>{
+    setTimeout(hideFightButtons(), 50)
+    setTimeout(showBuffButtons(), 100)
+    setTimeout(hideBuffButtons(), 1050)
+    setTimeout(showFightButtons(), 1050)
     setTimeout(nextMonster(), 1250)
-    setTimeout(window.alert("He dead son"), 1000)
 }
 
 nextMonster = () =>{ 
@@ -166,15 +169,15 @@ nextMonster = () =>{
 atkButton.addEventListener('click', attack = () =>{
     healthDisplay()
     setTimeout(hideFightButtons, 50)
-    setTimeout(showUserAtk, 160)
-    setTimeout(hideUserAtk, 1615)
+    setTimeout(showUserAtk, 150)
+    setTimeout(hideUserAtk, 650)
     monsterOneHp = monsterOneHp - (Math.floor(Math.random() * 5) + userAtk)
-    setTimeout(showMonsterAtk,1615)
-    setTimeout(hideMonsterAtk, 2890)
+    setTimeout(showMonsterAtk,660)
+    setTimeout(hideMonsterAtk, 1160)
     userHp = userHp - (Math.floor(Math.random() * 3) + monsterOneAtk)
     console.log(`userHp = ${userHp}`)
     console.log(`monsterOneHp = ${monsterOneHp}`)
-    setTimeout(showFightButtons, 3000)
+    setTimeout(showFightButtons, 1500)
     if (userHp <= 0){
         setTimeout(userDeath, 2000)
     } else if (monsterOneHp <= 0){
@@ -188,15 +191,15 @@ atkButton.addEventListener('click', attack = () =>{
 defButton.addEventListener('click', defend = () =>{
     healthDisplay()
     setTimeout(hideFightButtons, 50)
-    setTimeout(showMonsterAtk, 160)
-    setTimeout(hideMonsterAtk, 1615)
+    setTimeout(showMonsterAtk, 150)
+    setTimeout(hideMonsterAtk, 650)
     userHp = userHp - ((Math.floor(Math.random() * 6) + monsterOneAtk) - (Math.floor(Math.random() * 6) + userDef))
     monsterOneHp = monsterOneHp - (Math.floor(Math.random() * 3))
-    setTimeout(showUserDef, 1615)
-    setTimeout(hideUserDef, 2890)
+    setTimeout(showUserDef, 660)
+    setTimeout(hideUserDef, 1160)
     console.log(`userHp = ${userHp}`)
     console.log(`monsterOneHp = ${monsterOneHp}`)
-    setTimeout(showFightButtons, 3000)
+    setTimeout(showFightButtons, 1500)
     if (userHp <= 0){
         setTimeout(userDeath, 2000)
     }
