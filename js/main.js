@@ -36,7 +36,7 @@ healthDisplay = () =>{
     clearInterval(heartbeat1)
     clearInterval(heartbeat2)
     clearInterval(heartbeat3)
-    clearInterval(heartbeat4)
+    clearInterval(heartbeat4) 
     if (userHp > 75){
     heartbeat1 = setInterval(heartbeat1 = () => {
         setTimeout(rate = () =>{
@@ -130,29 +130,41 @@ userDeath = () =>{
     window.alert("You dead son")
     setTimeout(reload, 250)
 }
+
 monsterDeath = () =>{
     hideFightButtons()
     setTimeout(showBuffButtons, 100)
-    setTimeout(hideBuffButtons, 5000)
-    setTimeout(showFightButtons, 5100)
-    setTimeout(nextMonster, 5200)
+    chooseAtk.addEventListener('click', atkBoost = () =>{
+        userAtk = userAtk + 5
+        console.log(userAtk)
+    })
+    chooseHp.addEventListener('click', hpBoost = () =>{
+        userHp = userHp + 50
+        console.log(userHp)
+    })
+    setTimeout(hideBuffButtons, 3000)
+    setTimeout(showFightButtons, 3100)
+    setTimeout(nextMonster, 3200)
 }
 
 nextMonster = () =>{ 
-    if (monsterOne === monsterOne){
-    hideMonsterOne()
-    showMonsterTwo()
-    monsterOne = monsterTwo
-    monsterOneAtk = monsterTwoAtk
-    monsterOneHp = monsterTwoHp
-    } else if (monsterTwo === monsterTwo ){
+    if (monsterOneAtk <= 5){
+        hideMonsterOne()
+        showMonsterTwo()
+        monsterOne = monsterTwo
+        monsterOneAtk = monsterTwoAtk
+        monsterOneHp = monsterTwoHp
+        console.log(monsterOneAtk)
+    } else if (monsterOneAtk > 5 && monsterOneAtk < 25){
         hideMonsterTwo()
         showMonsterThree()
-        monsterTwo = monsterThree
-        monsterTwoAtk = monsterThreeAtk
-        monsterTwoHp = monsterThreeHp
+        monsterOne = monsterThree
+        monsterOneAtk = monsterThreeAtk
+        monsterOneHp = monsterThreeHp
+        console.log(monsterOneAtk)
     } else {
-        window.alert("wait, you killed jeff what the heff dude chill")
+        window.alert("wait, you killed jeff...what the heff dude chill")
+        setTimeout(reload, 250)
     }
 }
 
@@ -197,7 +209,6 @@ defButton.addEventListener('click', defend = () =>{
         monsterDeath()
     }
 })
-
 
 
 

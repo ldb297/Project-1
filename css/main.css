@@ -38,7 +38,6 @@ body {
 
 .fighterModel {
     display: flex;
-    background-color: #fff082;
     margin-top: 25px;
     height:480px;
     width: 270px;
@@ -49,6 +48,7 @@ body {
     justify-content: center;
     align-items: center;
     max-width: 270px;
+    margin-top: -20px;
 }
 
 .centerDisplay {
@@ -118,7 +118,6 @@ button {
 .monsterModel {
     display: flex;
     margin-top: 25px;
-    background-color: darkgoldenrod;
     height: 480px;
     width: 270px;
 }
@@ -136,7 +135,7 @@ button {
     justify-content: center;
     align-items: center;
     max-width: 270px;
-    margin-top: 50px;
+    margin-top: 75px;
 }
 
 #monsterThree {
