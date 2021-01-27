@@ -83,6 +83,20 @@ button {
     margin-left: 100px;
 }
 
+#chooseAtk{
+    display: none;
+    position: fixed;
+    top: auto;
+    margin-right: 100px;
+}
+
+#chooseHp{
+    display: none;
+    position: fixed;
+    top: auto;
+    margin-left: 100px;
+}
+
 #userAtk{
     display: none;
     position: relative;
@@ -108,6 +122,30 @@ button {
     height: 480px;
     width: 270px;
 }
+
+#monsterOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 270px;
+    margin-top: 45px;
+}
+
+#monsterTwo {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    max-width: 270px;
+    margin-top: 50px;
+}
+
+#monsterThree {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    max-width: 270px;
+}
+
 
 footer{
     display: flex;
