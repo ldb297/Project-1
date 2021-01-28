@@ -143,6 +143,7 @@ button {
     justify-content: center;
     align-items: center;
     max-width: 270px;
+    margin-top: -18px;
 }
 
 #titleFoot{
@@ -156,5 +157,4 @@ footer{
     justify-content: flex-end;
     font-size: 12px;
     text-align: right;
-
 }

@@ -9,8 +9,12 @@ let heartbeat1;
 let heartbeat2;
 let heartbeat3;
 let heartbeat4;
+let bgSound = new Audio("./sounds/bgmusic.mp3")
+let soundOne;
+let soundTwo;
+let soundThree;
 
-let userHp = 100
+let userHp = 1000
 let userAtk = 5
 let userDef = 3
 
@@ -31,7 +35,10 @@ let atkButton = document.querySelectorAll('button')[0]
 let defButton = document.querySelectorAll('button')[1]
 let chooseAtk = document.getElementById('chooseAtk')
 let chooseHp = document.getElementById('chooseHp')
+let fighterBox = document.getElementsByClassName('fighterModel')
+let monsterBox = document.getElementsByClassName('monsterModel')
 
+bgSound.play()
 healthDisplay = () =>{
     clearInterval(heartbeat1)
     clearInterval(heartbeat2)
@@ -127,8 +134,11 @@ reload = () =>{
     location.reload()
 }
 userDeath = () =>{
-    window.alert("You dead son")
-    setTimeout(reload, 250)
+    hideFightButtons()
+    soundOne = new Audio("./sounds/learn.mp3")
+    soundOne.play()
+    setTimeout(window.alert("You dead son"), 2500)
+    setTimeout(reload, 6250)
 }
 
 monsterDeath = () =>{
@@ -149,13 +159,17 @@ monsterDeath = () =>{
 
 nextMonster = () =>{ 
     if (monsterOneAtk <= 5){
+        soundOne = new Audio("./sounds/damage1.mp3")
+        soundOne.play()
         hideMonsterOne()
         showMonsterTwo()
         monsterOne = monsterTwo
         monsterOneAtk = monsterTwoAtk
         monsterOneHp = monsterTwoHp
         console.log(monsterOneAtk)
-    } else if (monsterOneAtk > 5 && monsterOneAtk < 25){
+    } else if (monsterOneAtk > 5 && monsterOneAtk < 20){
+        soundOne = new Audio("./sounds/damage2.mp3")
+        soundOne.play()
         hideMonsterTwo()
         showMonsterThree()
         monsterOne = monsterThree
@@ -169,13 +183,17 @@ nextMonster = () =>{
 }
 
 atkButton.addEventListener('click', attack = () =>{
+    soundOne = new Audio("./sounds/oof.mp3")
+    soundTwo = new Audio("./sounds/re-hit.mp3")
     healthDisplay()
     monsterOneHp = monsterOneHp - (Math.floor(Math.random() * 5) + userAtk)
     if (monsterOneHp > 0){
         setTimeout(hideFightButtons, 50)
         setTimeout(showUserAtk, 150)
+        setTimeout(soundOne.play(), 300)
         setTimeout(hideUserAtk, 650)
         setTimeout(showMonsterAtk,650)
+        setTimeout(soundTwo.play(), 800)
         setTimeout(hideMonsterAtk, 1250)
         userHp = userHp - (Math.floor(Math.random() * 3) + monsterOneAtk)
     }
@@ -192,6 +210,8 @@ atkButton.addEventListener('click', attack = () =>{
 
 defButton.addEventListener('click', defend = () =>{
     healthDisplay()
+    soundOne = new Audio("./sounds/tryit.mp3")
+    soundOne.play()
     setTimeout(hideFightButtons, 50)
     setTimeout(showMonsterAtk, 150)
     setTimeout(hideMonsterAtk, 650)
