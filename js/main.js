@@ -9,7 +9,7 @@ let heartbeat1;
 let heartbeat2;
 let heartbeat3;
 let heartbeat4;
-let bgSound = new Audio("./sounds/bgmusic.mp3")
+let backMusic = new Audio("./sounds/bgmusic.mp3")
 let soundOne;
 let soundTwo;
 let soundThree;
@@ -38,7 +38,7 @@ let chooseHp = document.getElementById('chooseHp')
 let fighterBox = document.getElementsByClassName('fighterModel')
 let monsterBox = document.getElementsByClassName('monsterModel')
 
-bgSound.play()
+backMusic.play()
 healthDisplay = () =>{
     clearInterval(heartbeat1)
     clearInterval(heartbeat2)
