@@ -14,12 +14,12 @@ let userHp = 100
 let userAtk = 5
 let userDef = 3
 
-let monsterOneHp = 10
+let monsterOneHp = 25
 let monsterOneAtk = 5
 let monsterTwoHp = 50
 let monsterTwoAtk = 10
 let monsterThreeHp = 100
-let monsterThreeAtk = 25
+let monsterThreeAtk = 20
 
 let userAtkImg = document.getElementById('userAtk')
 let userDefImg = document.getElementById('userDef')
@@ -41,37 +41,37 @@ healthDisplay = () =>{
     heartbeat1 = setInterval(heartbeat1 = () => {
         setTimeout(rate = () =>{
             document.body.style.backgroundColor = "red";
-        }, 250)
+        }, 50)
         setTimeout(rest = () =>{
             document.body.style.backgroundColor = "darkgrey";
-        }, 550)
+        }, 350)
     }, 2500);
     } else if (userHp <=75 && userHp > 50){
     heartbeat2 = setInterval(heartbeat2 = () =>{
         setTimeout(rate = () =>{
             document.body.style.backgroundColor = "red";
-        }, 250)
+        }, 50)
         setTimeout(rest = () =>{
             document.body.style.backgroundColor = "darkgrey";
-        }, 550)
+        }, 350)
     }, 1500);
     } else if (userHp <= 50 && userHp > 25){
     heartbeat3 = setInterval(heartbeat3 = () => {
         setTimeout(rate = () =>{
             document.body.style.backgroundColor = "red";
-        }, 250)
+        }, 50)
         setTimeout(rest = () =>{
             document.body.style.backgroundColor = "darkgrey";
-        }, 550)
+        }, 350)
     }, 1000);
     } else if (userHp <= 25){
     heartbeat4 = setInterval(heartbeat4 = () => {
         setTimeout(rate = () =>{
             document.body.style.backgroundColor = "red";
-        }, 250)
+        }, 50)
         setTimeout(rest = () =>{
             document.body.style.backgroundColor = "darkgrey";
-        }, 550)
+        }, 250)
     }, 250);
     }   
 }
@@ -142,9 +142,9 @@ monsterDeath = () =>{
         userHp = userHp + 50
         console.log(userHp)
     })
-    setTimeout(hideBuffButtons, 3000)
-    setTimeout(showFightButtons, 3100)
-    setTimeout(nextMonster, 3200)
+    setTimeout(hideBuffButtons, 2100)
+    setTimeout(showFightButtons, 2150)
+    setTimeout(nextMonster, 2200)
 }
 
 nextMonster = () =>{ 
@@ -173,17 +173,17 @@ atkButton.addEventListener('click', attack = () =>{
     monsterOneHp = monsterOneHp - (Math.floor(Math.random() * 5) + userAtk)
     if (monsterOneHp > 0){
         setTimeout(hideFightButtons, 50)
-        setTimeout(showUserAtk, 160)
-        setTimeout(hideUserAtk, 1615)
-        setTimeout(showMonsterAtk,1615)
-        setTimeout(hideMonsterAtk, 2890)
+        setTimeout(showUserAtk, 150)
+        setTimeout(hideUserAtk, 650)
+        setTimeout(showMonsterAtk,650)
+        setTimeout(hideMonsterAtk, 1250)
         userHp = userHp - (Math.floor(Math.random() * 3) + monsterOneAtk)
     }
     console.log(`userHp = ${userHp}`)
     console.log(`monsterOneHp = ${monsterOneHp}`)
-    setTimeout(showFightButtons, 3000)
+    setTimeout(showFightButtons, 1500)
     if (userHp <= 0){
-        setTimeout(userDeath, 2000)
+        setTimeout(userDeath, 1500)
     } else if (monsterOneHp <= 0){
         window.alert("He dead son")
         monsterDeath()
@@ -193,17 +193,17 @@ atkButton.addEventListener('click', attack = () =>{
 defButton.addEventListener('click', defend = () =>{
     healthDisplay()
     setTimeout(hideFightButtons, 50)
-    setTimeout(showMonsterAtk, 160)
-    setTimeout(hideMonsterAtk, 1615)
+    setTimeout(showMonsterAtk, 150)
+    setTimeout(hideMonsterAtk, 650)
     userHp = userHp - ((Math.floor(Math.random() * 6) + monsterOneAtk) - (Math.floor(Math.random() * 6) + userDef))
     monsterOneHp = monsterOneHp - (Math.floor(Math.random() * 3))
-    setTimeout(showUserDef, 1615)
-    setTimeout(hideUserDef, 2890)
+    setTimeout(showUserDef, 650)
+    setTimeout(hideUserDef, 1250)
     console.log(`userHp = ${userHp}`)
     console.log(`monsterOneHp = ${monsterOneHp}`)
-    setTimeout(showFightButtons, 3000)
+    setTimeout(showFightButtons, 1500)
     if (userHp <= 0){
-        setTimeout(userDeath, 2000)
+        setTimeout(userDeath, 1500)
     } else if (monsterOneHp <= 0){
         window.alert("He dead son")
         monsterDeath()

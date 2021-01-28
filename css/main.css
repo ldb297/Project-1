@@ -48,7 +48,7 @@ body {
     justify-content: center;
     align-items: center;
     max-width: 270px;
-    margin-top: -20px;
+    margin-bottom: 50px;
 }
 
 .centerDisplay {
@@ -145,6 +145,11 @@ button {
     max-width: 270px;
 }
 
+#titleFoot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 footer{
     display: flex;
