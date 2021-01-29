@@ -73,6 +73,7 @@ button {
     display: flex;
     position: fixed;
     top: auto;
+    height: 50px;
     margin-right: 100px;
 }
 
@@ -80,6 +81,7 @@ button {
     display: flex;
     position: fixed;
     top: auto;
+    height: 50px;
     margin-left: 100px;
 }
 
@@ -87,6 +89,7 @@ button {
     display: none;
     position: fixed;
     top: auto;
+    height: 50px;
     margin-right: 100px;
 }
 
@@ -94,6 +97,7 @@ button {
     display: none;
     position: fixed;
     top: auto;
+    height: 50px;
     margin-left: 100px;
 }
 

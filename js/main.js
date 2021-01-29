@@ -14,7 +14,7 @@ let soundOne;
 let soundTwo;
 let soundThree;
 
-let userHp = 1000
+let userHp = 100
 let userAtk = 5
 let userDef = 3
 
@@ -79,7 +79,7 @@ healthDisplay = () =>{
         setTimeout(rest = () =>{
             document.body.style.backgroundColor = "darkgrey";
         }, 250)
-    }, 250);
+    }, 500);
     }   
 }
 healthDisplay()
